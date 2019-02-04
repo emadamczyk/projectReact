@@ -1,42 +1,55 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import axios from "axios";
+import Header from "./components/Header";
+import Board from "./components/Board"
+import images from './image'
 
 class App extends Component {
-
   state = {
-    "testValue": "getting..."
-  }
+    "message": "Click an image to start",
+    "score": 0,
+    "images": images,
+    "clicked": []
+  };
 
-
-
-
-  componentDidMount() {
-    // console.log("mouting app");
-    // axios.get("/api/test", (result) => {
-    //   console.log(result);
-    // })
-
-    axios.get("/api/test")
-  .then(result => {
-    console.log(result.data.test)
-    this.setState({"testValue": result.data.test})
-  })
-  }
-
+  handleImageClickById = (imageId) => {
+    let clicked = this.state.clicked.slice(0);
+    console.log("Checking", clicked, imageId);
+    // is this imageId in clicked
+    if (clicked.findIndex(item => imageId === item) === -1){
+      clicked.push(imageId);
+      this.setState({
+        "clicked": clicked,
+        "score": this.state.score + 1,
+        "message": "Good guess, keep going"
+      })
+    } else {
+      // you lose, start over
+      this.setState({
+        "message": "You Lose, start over",
+        "score": 0,
+        "clicked": []
+      })
+    }
+    // rearrange images
+    let images = this.state.images.slice(0);
+    images.sort(() => Math.random() - 0.5);
+    this.setState({images});
+    console.log("handling click for ",imageId);
+    
+  } 
 
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to Final! React! Project!</h2>
-        </div>
-        <p className="App-intro">
-          {/* To get started, edit <code>src/App.js</code> and save to reload. */}
-          the test value is: {this.state.testValue}
-        </p>
+        <Header 
+        message={this.state.message}
+        score={this.state.score}
+        total={this.state.images.length} />
+        <Board 
+          images={this.state.images}
+          clickHandler={this.handleImageClickById}
+        />
       </div>
     );
   }
