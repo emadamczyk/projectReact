@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const axios = require("axios");
 const incidentsController = require("../../controllers/incidentsController");
 
 // Matches with "/api/incidents"
