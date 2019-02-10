@@ -2,10 +2,10 @@ import React from "react";
 
 function SearchForm(props) {
   return (
-    <form>
+    <form style={{marginLeft:"50px", marginTop: "50px", fontSize: "20px"}}> 
       <div className="form-group">
-        <label htmlFor="search">Search:</label>
-        <input
+        <label htmlFor="search">Search</label>
+        <input style={{width: "350px"}}
           onChange={props.handleInputChange}
           value={props.search}
           name="search"
@@ -14,7 +14,7 @@ function SearchForm(props) {
           placeholder="Search for a Location"
           id="search"
         />
-        <button onClick={props.handleFormSubmit} className="btn btn-primary mt-3">
+        <button onClick={props.handleFormSubmit} className="btn btn-success mt-3">
           Search
         </button>
       </div>

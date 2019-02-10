@@ -33,7 +33,7 @@ class Incidents extends Component {
               <Input name="title" placeholder="Title (required)" />
               <Input name="author" placeholder="Author (required)" />
               <Input name="type" placeholder="Type" />
-              <TextArea name="description" placeholder="Description (Optional)" />
+              <TextArea name="description" placeholder="Description" />
               <FormBtn>Submit Incident</FormBtn>
             </form>
           </Col>

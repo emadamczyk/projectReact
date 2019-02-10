@@ -10,9 +10,9 @@ class SearchResultContainer extends Component {
     results: []
   };
 
-  componentDidMount() {
-    this.searchBikeIncidents("chicago");
-  }
+  // componentDidMount() {
+  //   this.searchBikeIncidents("");
+  // }
 
   searchBikeIncidents = query => {
     ExternalAPI.search(query)
