@@ -32,6 +32,12 @@ class Incidents extends Component {
     });
   };
 
+  deleteIncident = id => {
+    API.deleteIncident(id)
+      .then(res => this.loadIncidents())
+      .catch(err => console.log(err));
+  };
+
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.title && this.state.author) {
@@ -100,7 +106,7 @@ class Incidents extends Component {
                         {incident.title} by {incident.author}
                       </strong>
                     </a>
-                    <DeleteBtn />
+                    <DeleteBtn onClick={() => this.deleteIncident(incident._id)} />
                   </ListItem>
                 ))}
               </List>

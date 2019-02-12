@@ -13,7 +13,7 @@ export function Input(props) {
 export function TextArea(props) {
   return (
     <div className="form-group">
-      <textarea className="form-control" rows="20" {...props} />
+      <textarea style={{height: "100px"}} className="form-control" rows="20" {...props} />
     </div>
   );
 }
