@@ -8,7 +8,11 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 
 class Incidents extends Component {
   state = {
-    incidents: []
+    incidents: [],
+    title: "",
+    author: "",
+    type: "",
+    description: ""
   };
 
   componentDidMount() {
@@ -21,6 +25,27 @@ class Incidents extends Component {
       .catch(err => console.log(err));
   };
 
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.title && this.state.author) {
+      API.saveIncident({
+        title: this.state.title,
+        author: this.state.author,
+        type: this.state.type,
+        description: this.state.description
+      })
+        .then(res => this.loadIncidents())
+        .catch(err => console.log(err));
+    }
+  };
+
   render() {
     return (
       <Container fluid>
@@ -30,11 +55,34 @@ class Incidents extends Component {
               <h1>Post an Incident</h1>
             </Jumbotron>
             <form>
-              <Input name="title" placeholder="Title (required)" />
-              <Input name="author" placeholder="Author (required)" />
-              <Input name="type" placeholder="Type" />
-              <TextArea name="description" placeholder="Description" />
-              <FormBtn>Submit Incident</FormBtn>
+              <Input  
+              value={this.state.title}
+              onChange={this.handleInputChange}
+              name="title" 
+              placeholder="Title (required)" 
+              />
+              <Input 
+              value={this.state.author}
+              onChange={this.handleInputChange}
+              name="author" 
+              placeholder="Author (required)" 
+              />
+              <Input 
+              value={this.state.type}
+              onChange={this.handleInputChange}
+              name="type" 
+              placeholder="Type" 
+              />
+              <TextArea 
+              value={this.state.description}
+              onChange={this.handleInputChange}
+              name="description" 
+              placeholder="Description" 
+              />
+              <FormBtn 
+              onClick={this.handleFormSubmit}
+              >Submit Incident
+              </FormBtn>
             </form>
           </Col>
           <Col size="md-6 sm-12">
