@@ -70,11 +70,11 @@ const styles = theme => ({
   },
 });
 
-const handleInputChange = (event) => {
-event.preventDefault();
-const inputValue = event.target.value;
-console.log(inputValue);
-}
+// const handleInputChange = (event) => {
+// event.preventDefault();
+// const inputValue = event.target.value;
+// console.log(inputValue);
+// }
 
 // searchBikeIncidents = query => {
 //   ExternalAPI.search(query)
@@ -82,11 +82,11 @@ console.log(inputValue);
 //     .catch(err => console.log(err));
 // };
 
-const handleKeyPress = (event) => {
-  if(event.key == 'Enter'){
-    console.log('key press working');
-  }
-}
+// const handleKeyPress = (event) => {
+//   if(event.key == 'Enter'){
+//     console.log('key press working');
+//   }
+// }
 
 function SearchAppBar(props) {
   const { classes} = props;
@@ -106,8 +106,10 @@ function SearchAppBar(props) {
               <SearchIcon />
             </div>
             <InputBase
-              onKeyPress ={handleKeyPress}
-              onChange={handleInputChange}
+              onKeyPress={props.onKeyPress}
+              onChange={props.handleInputChange}
+              value={props.value}
+              name='searchTerm'
               placeholder="Test"
               classes={{
                 root: classes.inputRoot,

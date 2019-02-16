@@ -7,7 +7,8 @@ import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import MapContainer from "../components/Maps";
 import NavBar from "../components/NavBar";
-import SearchResultContainer from "../components/SearchResultContainer";
+import ResultList from "../components/ResultList";
+import ExternalAPI from "../utils/ExternalAPI";
 
 class Incidents extends Component {
   state = {
@@ -15,12 +16,29 @@ class Incidents extends Component {
     title: "",
     author: "",
     type: "",
-    description: ""
+    description: "",
+    searchTerm: "",
+    results:[]
   };
 
   componentDidMount() {
     this.loadIncidents();
   }
+
+  searchBikeIncidents = query => {
+    console.log("searching...")
+    ExternalAPI.search(query)
+      .then(res => this.setState({ results: res.data.incidents }))
+      .catch(err => console.log(err));
+  };
+
+  handleSearchSubmit  = event => {
+    if(event.key === 'Enter') {
+      console.log("submittng...", event)
+      // event.preventDefault();
+      this.searchBikeIncidents(this.state.searchTerm);
+    }
+  };
 
   loadIncidents = () => {
     API.getIncidents()
@@ -29,10 +47,12 @@ class Incidents extends Component {
   };
 
   handleInputChange = event => {
+    console.log('im here!')
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
+    // this.searchBikeIncidents(this.state.searchTerm);
   };
 
   deleteIncident = id => {
@@ -59,15 +79,11 @@ class Incidents extends Component {
     return (
       
       <Container fluid>
-    <NavBar 
-            placeholder="Search forecast for your favorite cities..."
-            value={this.state.term}
-            writeInput={this.handleInputChange}
-    />
+    <NavBar value={this.state.searchTerm} handleInputChange={this.handleInputChange} onKeyPress={this.handleSearchSubmit} />
     <br></br>
+    <ResultList results={this.state.results}/>
       <MapContainer/>
       <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-      <SearchResultContainer/>
         <Row>
           <Col size="md-6">
             <Jumbotron>
