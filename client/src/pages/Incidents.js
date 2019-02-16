@@ -5,6 +5,9 @@ import DeleteBtn from "../components/DeleteBtn";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import MapContainer from "../components/Maps";
+import NavBar from "../components/NavBar";
+import SearchResultContainer from "../components/SearchResultContainer";
 
 class Incidents extends Component {
   state = {
@@ -54,7 +57,17 @@ class Incidents extends Component {
 
   render() {
     return (
+      
       <Container fluid>
+    <NavBar 
+            placeholder="Search forecast for your favorite cities..."
+            value={this.state.term}
+            writeInput={this.handleInputChange}
+    />
+    <br></br>
+      <MapContainer/>
+      <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+      <SearchResultContainer/>
         <Row>
           <Col size="md-6">
             <Jumbotron>
@@ -116,6 +129,7 @@ class Incidents extends Component {
           </Col>
         </Row>
       </Container>
+      
     );
   }
 }

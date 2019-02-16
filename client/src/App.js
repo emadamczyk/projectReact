@@ -1,20 +1,21 @@
 import React from "react";
 import Incidents from "./pages/Incidents";
-import Nav from "./components/Nav";
-import { Container, Row, Col } from "./components/Grid";
-import SearchResultContainer from "./components/SearchResultContainer";
+import Landing from "./pages/Landing";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import 'typeface-roboto';
+
+
+
 function App() {
 
   return (
-    <div>
-      <Nav />
-      <SearchResultContainer />
-      <br></br><br></br>
-      <Container >
-        <Incidents />
-      
-      </Container>
-    </div>
+    <Router>
+      <div>
+        <Route exact path="/landing" component={Landing} />
+        <Route exact path="/home" component={Incidents} />
+      </div>
+    </Router>
     
   );
 }
