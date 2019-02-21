@@ -1,23 +1,65 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import DeleteBtn from "../components/DeleteBtn";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import NavBar from "../components/NavBar";
+import ResultList from "../components/ResultList";
+import ExternalAPI from "../utils/ExternalAPI";
+import { withStyles } from '@material-ui/core/styles';
+
+
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+});
+
 
 class Incidents extends Component {
+
   state = {
     incidents: [],
     title: "",
     author: "",
     type: "",
-    description: ""
+    description: "",
+    searchTerm: "",
+    results:[],
+    blah: "There are no results to display, yet...",
+    userId: null
   };
+  
 
   componentDidMount() {
+    let userId = sessionStorage.getItem("userId");
+    this.setState({userId});
     this.loadIncidents();
   }
+
+  searchBikeIncidents = query => {
+    console.log("searching...")
+    ExternalAPI.search(query)
+      .then(res => this.setState({ results: res.data.incidents }))
+      .catch(err => console.log(err));
+  };
+
+  handleSearchSubmit  = event => {
+    if(event.key === 'Enter') {
+      console.log("submittng...", event)
+
+      // event.preventDefault();
+      this.searchBikeIncidents(this.state.searchTerm);
+
+      this.setState({
+        blah: ""
+      });
+    }
+  };
 
   loadIncidents = () => {
     API.getIncidents()
@@ -26,10 +68,12 @@ class Incidents extends Component {
   };
 
   handleInputChange = event => {
+    console.log('im here!')
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
+    // this.searchBikeIncidents(this.state.searchTerm);
   };
 
   deleteIncident = id => {
@@ -39,7 +83,11 @@ class Incidents extends Component {
   };
 
   handleFormSubmit = event => {
+    
     event.preventDefault();
+    
+   
+
     if (this.state.title && this.state.author) {
       API.saveIncident({
         title: this.state.title,
@@ -50,74 +98,24 @@ class Incidents extends Component {
         .then(res => this.loadIncidents())
         .catch(err => console.log(err));
     }
+
   };
 
   render() {
+    const { classes } = this.props;
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>Post an Incident</h1>
-            </Jumbotron>
-            <form>
-              <Input  
-              value={this.state.title}
-              onChange={this.handleInputChange}
-              name="title" 
-              placeholder="Title (required)" 
-              />
-              <Input 
-              value={this.state.author}
-              onChange={this.handleInputChange}
-              name="author" 
-              placeholder="Author (required)" 
-              />
-              <Input 
-              value={this.state.type}
-              onChange={this.handleInputChange}
-              name="type" 
-              placeholder="Type" 
-              />
-              <TextArea 
-              value={this.state.description}
-              onChange={this.handleInputChange}
-              name="description" 
-              placeholder="Description" 
-              />
-              <FormBtn 
-              onClick={this.handleFormSubmit}
-              >Submit Incident
-              </FormBtn>
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>My Incidents</h1>
+      <Container fluid>  
+    <NavBar value={this.state.searchTerm} handleInputChange={this.handleInputChange} onKeyPress={this.handleSearchSubmit} />
+    <br></br>
 
-            </Jumbotron>
-            {this.state.incidents.length ? (
-              <List>
-                
-                {this.state.incidents.map(incident => (
-                  <ListItem key={incident._id}>
-                    <a href={"/incidents/" + incident._id}>
-                      <strong>
-                        {incident.title} by {incident.author}
-                      </strong>
-                    </a>
-                    <DeleteBtn onClick={() => this.deleteIncident(incident._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col>
-        </Row>
+    <h1 style={{margin: '40px'}}>{this.state.blah}</h1>
+
+    <ResultList results={this.state.results}/>
+    
       </Container>
+      
     );
   }
 }
 
-export default Incidents;
+export default withStyles(styles)(Incidents);

@@ -31,15 +31,6 @@ app.use(passport.session());
 // Add routes, both API and view
 app.use(routes);
 
-// // Define API routes here
-// app.get("/api/test", function(req, res) {
-//   res.json({"test": "value"})
-// });
-
-// app.get("/api/externalincidents", (req, res) => {
-//   res.send("test page");
-// })
-
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/incidentDB");
 
