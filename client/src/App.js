@@ -2,6 +2,7 @@ import React from "react";
 import Incidents from "./pages/Incidents";
 import Landing from "./pages/Landing";
 import Create from "./pages/Create";
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import 'typeface-roboto';
 

@@ -15,6 +15,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    console.log('THIS IS OUR NEW INCIDENT TO CREATE!!!', req.body)
     db.Incident
       .create(req.body)
       .then(dbModel => res.json(dbModel))
