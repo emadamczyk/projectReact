@@ -1,5 +1,6 @@
 module.exports = {
     login: function(req, res) {
-        res.send("worked");
+        console.log("USER CONTROLLER LOGIN")
+        res.send(req.user);
     }
 }
