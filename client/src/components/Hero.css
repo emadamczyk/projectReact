@@ -10,3 +10,21 @@
 
 
 }
+
+#motto {
+    font-size: 100px; 
+    color: white; 
+    font-weight: bold; 
+    -webkit-text-stroke: black;
+    -webkit-text-stroke-width: .25px;
+    opacity: 1;
+}
+
+#chainButton {
+    height: 200px;
+    background-image: url('https://www.pngkey.com/png/full/80-805911_clip-art-free-library-bicycle-png-for-motorcycle.png');
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+}

@@ -20,16 +20,17 @@ const Hero = () => {
     >
     
         <div>
-            <p style={{fontSize: "100px", color: "black", fontWeight: "bold", textStrokeWidth: "1px", textStrokeColor: "black"}} overlayStyle={{opacity: "1"}}>WE LOVE SAFE BIKING</p>
+            <p id="motto" >WE LOVE SAFE BIKING</p>
           
        
         </div>   
    
+    <div id="chainButton">
 
 <Button component={Link} to="/home" className="btn-circle btn-xl">
         POST AN INCIDENT!
     </Button>
-    
+    </div>
     </div>
 
    
