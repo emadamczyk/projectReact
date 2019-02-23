@@ -1,3 +1,4 @@
 module.exports = {
-  Incident: require("./incident")
+  Incident: require("./incident"),
+  User: require("./User")
 };

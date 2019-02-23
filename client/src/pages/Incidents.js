@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../components/Grid";
 import NavBar from "../components/NavBar";
 import ResultList from "../components/ResultList";
 import ExternalAPI from "../utils/ExternalAPI";
+import geoCodingAPI from "../utils/geoCodingAPI";
 import { withStyles } from '@material-ui/core/styles';
 
 
@@ -30,11 +31,14 @@ class Incidents extends Component {
     description: "",
     searchTerm: "",
     results:[],
-    blah: "There are no results to display, yet..."
+    blah: "There are no results to display, yet...",
+    userId: null
   };
   
 
   componentDidMount() {
+    let userId = sessionStorage.getItem("userId");
+    this.setState({userId});
     this.loadIncidents();
   }
 
@@ -80,20 +84,21 @@ class Incidents extends Component {
   };
 
   handleFormSubmit = event => {
-    
     event.preventDefault();
-    
-   
-
     if (this.state.title && this.state.author) {
-      API.saveIncident({
-        title: this.state.title,
-        author: this.state.author,
-        type: this.state.type,
-        description: this.state.description
-      })
-        .then(res => this.loadIncidents())
-        .catch(err => console.log(err));
+
+      // geoCodingAPI.search().then(function(data) {
+
+      //   console.log('WE GOT THIS BACK!!! FROM GEO!!', data)
+      // })
+      // API.saveIncident({
+      //   title: this.state.title,
+      //   author: this.state.author,
+      //   type: this.state.type,
+      //   description: this.state.description
+      // })
+      //   .then(res => this.loadIncidents())
+      //   .catch(err => console.log(err));
     }
 
   };
