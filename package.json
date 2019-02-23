@@ -31,6 +31,7 @@
     "mongoose": "^5.4.9",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "typeface-montserrat": "0.0.54"
   }
 }

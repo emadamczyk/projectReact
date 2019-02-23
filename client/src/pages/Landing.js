@@ -1,9 +1,14 @@
 import React from "react";
 import Hero from "../components/Hero";
+
+import Center from 'react-center';
+import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import { Link } from 'react-router-dom';
+import NavBarLanding from "../components/NavBarLanding";
 
 
 const styles = theme => ({
@@ -23,11 +28,16 @@ function Landing(props) {
 
   return (
     <div>
+      
+    <NavBarLanding />
 <div className={classes.root}>
-      <Grid container spacing={24}>
+      <Grid container >
         <Grid item xs={12}>
-          <Paper className={classes.paper}><Hero/></Paper>
           
+            <Hero/>
+           
+          
+         
         </Grid>
       </Grid>
     </div>
