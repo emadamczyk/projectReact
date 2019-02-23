@@ -18,10 +18,12 @@ import geoCodingAPI from "../utils/geoCodingAPI";
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import WorkingMap from "../components/WorkingMap";
 
+
 const mapStyle = {
   width: '100%',
   height: '100%'
 }
+
 
 const styles = theme => ({
   root: {
@@ -60,7 +62,7 @@ class Create extends Component {
     lng: "",
     coordArray: []
   };
-  
+
 
   componentDidMount() {
     this.loadIncidents();
@@ -86,6 +88,7 @@ class Create extends Component {
       .then(res => this.setState({ incidents: res.data }))
       .catch(err => console.log(err));
   };
+
 
   handleInputChange = event => {
     console.log('im here!')
@@ -155,12 +158,13 @@ class Create extends Component {
       <MenuAppBar/>
       <div style={{margin: "40px"}} className={classes.root}>
       <Grid container spacing={24}>
-        <Grid item xs={6}>
-        <div style={gridTileStyle}>
+        <Grid style={gridTileStyle} item lg={6} md={12} xs={12}>
+        
           <WorkingMap incidentsArray={this.state.incidents}/>
-          </div>
+          
         </Grid>
-        <Grid item xs={3}>
+        {/* xs=6 sm=3 */}
+        <Grid item lg={3} md={6} xs={12}>
           <Paper className={classes.paper}>
           <div>
           <h1>Submit an Incident</h1>
@@ -204,7 +208,8 @@ class Create extends Component {
           </div>
           </Paper>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item lg={3} md={6} xs={12}>
+        {/* <Grid item xs={12} sm={3}> */}
           <Paper className={classes.paper}>
           <div>
             <h1>My Incidents</h1>
