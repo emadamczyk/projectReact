@@ -36,6 +36,7 @@ passport.use(
       passReqToCallback: true
     },
     function(req, username, password, done) {
+      console.log("PASSPORT LOGIN", username, password)
       User.findOne({ username: username }, function(err, user) {
         if (err) {
           console.log(err);
