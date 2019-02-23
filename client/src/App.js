@@ -8,6 +8,10 @@ import 'typeface-roboto';
 import './index';
 //import 'typeface-montserrat';
 import UserForm from "./components/UserForm";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 689cc7a9817b9235044d254e17fba920d423e592
 
 
 
