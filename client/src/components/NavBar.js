@@ -9,6 +9,8 @@ import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import CreateIcon from '@material-ui/icons/Create';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   root: {
@@ -100,24 +102,41 @@ function SearchAppBar(props) {
           <Typography className={classes.title} variant="h6" color="inherit" noWrap>
             Bike Your AREA
           </Typography>
+        
+          
           <div className={classes.grow} />
+          {/* <IconButton
+                  component={Link} to="/create"
+                >
+                <CreateIcon />
+                </IconButton> */}
           <div className={classes.search}>
             <div className={classes.searchIcon}>
+
+            
               <SearchIcon />
+              
             </div>
             <InputBase
               onKeyPress={props.onKeyPress}
               onChange={props.handleInputChange}
               value={props.value}
               name='searchTerm'
-              placeholder="Test"
+              placeholder="Search"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
             />
+            
           </div>
+          <IconButton
+                  component={Link} to="/create"
+                >
+                <CreateIcon />
+                </IconButton>
         </Toolbar>
+    
       </AppBar>
     </div>
   );

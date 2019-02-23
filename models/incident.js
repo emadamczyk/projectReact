@@ -5,7 +5,10 @@ const incidentSchema = new Schema({
   title: { type: String, required: true },
   author: { type: String, required: true },
   type: String,
+  location: String,
   description: String,
+  lat: String,
+  lng: String,
   date: { type: Date, default: Date.now }
 });
 

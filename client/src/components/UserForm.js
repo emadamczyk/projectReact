@@ -20,7 +20,9 @@ class UserForm extends React.Component {
       username: this.state.username,
       password: this.state.password
     })
-      .then(res => res.data)
+      .then(res => {
+        sessionStorage.setItem("userId", res.data._id);
+      })
       .then(console.log)
   };
 
