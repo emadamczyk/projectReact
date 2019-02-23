@@ -31,11 +31,14 @@ class Incidents extends Component {
     description: "",
     searchTerm: "",
     results:[],
-    blah: "There are no results to display, yet..."
+    blah: "There are no results to display, yet...",
+    userId: null
   };
   
 
   componentDidMount() {
+    let userId = sessionStorage.getItem("userId");
+    this.setState({userId});
     this.loadIncidents();
   }
 

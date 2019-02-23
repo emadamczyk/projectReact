@@ -5,6 +5,7 @@ import Create from "./pages/Create";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import 'typeface-roboto';
+import UserForm from "./components/UserForm";
 
 
 
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/" component={Landing} />
         <Route exact path="/home" component={Incidents} />
         <Route exact path="/create" component={Create} />
+        <Route exact path="/login" component={UserForm} />
       </div>
     </Router>
     

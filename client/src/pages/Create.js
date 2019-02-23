@@ -60,11 +60,14 @@ class Create extends Component {
     results:[],
     lat: "",
     lng: "",
-    coordArray: []
+    coordArray: [],
+    userId: null
   };
 
 
   componentDidMount() {
+    let userId = sessionStorage.getItem("userId");
+    this.setState({userId});
     this.loadIncidents();
   }
 
