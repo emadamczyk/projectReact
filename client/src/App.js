@@ -4,6 +4,7 @@ import Landing from "./pages/Landing";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import 'typeface-roboto';
+import './index';
 //import 'typeface-montserrat';
 
 

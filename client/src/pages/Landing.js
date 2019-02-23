@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "../components/Hero";
+
 import Center from 'react-center';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
@@ -30,14 +31,13 @@ function Landing(props) {
       
     <NavBarLanding />
 <div className={classes.root}>
-      <Grid container spacing={24}>
+      <Grid container >
         <Grid item xs={12}>
-          <Paper className={classes.paper}>
+          
             <Hero/>
            
           
-          
-          </Paper>
+         
         </Grid>
       </Grid>
     </div>
