@@ -109,12 +109,12 @@ class Create extends Component {
   var self = this
     geoCodingAPI.search(this.state.location).then(function(data) {
 
-      console.log("this is the location object", data.data.results[0].geometry.location);
-      self.setState({coordArray: [...self.state.coordArray, data.data.results[0].geometry.location]})
-      console.log("this is coordarray", self.state.coordArray);
+      // console.log("this is the location object", data.data.results[0].geometry.location);
+      self.setState({incidents: [...self.state.incidents, data.data.results[0].geometry.location]})
+      // console.log("this is coordarray", self.state.coordArray);
       // console.log("this is the location array", self.state.coordArray);
 
-      console.log('WE GOT THIS BACK!!! FROM GEO!!', data.data.results[0].geometry.location.lat)
+      // console.log('WE GOT THIS BACK!!! FROM GEO!!', data.data.results[0].geometry.location.lat)
       API.saveIncident({
         title: self.state.title,
         author: self.state.author,
@@ -157,7 +157,7 @@ class Create extends Component {
       <Grid container spacing={24}>
         <Grid item xs={6}>
         <div style={gridTileStyle}>
-          <WorkingMap coordinateArray={this.state.coordArray}/>
+          <WorkingMap incidentsArray={this.state.incidents}/>
           </div>
         </Grid>
         <Grid item xs={3}>
@@ -223,7 +223,7 @@ class Create extends Component {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3>You Have No Incidents Reported</h3>
             )}
           </div>
           </Paper>
