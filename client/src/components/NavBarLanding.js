@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../img/BYA-logo-crop.png';
+import logo from '../img/BYA-logo-horiz.PNG';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -26,16 +26,15 @@ function ButtonAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" style={{background:"#0E35B5"}}>
         <Toolbar>
           {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton> */}
           <img id="logo" style={{height: "12vh", marginRight: "10px"}} src={logo} />
           <Typography variant="h6" color="inherit" className={classes.grow}>
-            Bike Your AREA
+            
           </Typography>
-          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </div>

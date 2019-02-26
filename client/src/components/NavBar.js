@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../img/BYA-logo-horiz.PNG';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -94,13 +95,14 @@ function SearchAppBar(props) {
   const { classes} = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" style={{background:"#0E35B5"}}>
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
+          {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
-          </IconButton>
-          <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-            Bike Your AREA
+          </IconButton> */}
+          <img id="logo" style={{height: "12vh", marginRight: "10px"}} src={logo} />
+          <Typography variant="h6" color="inherit" className={classes.grow}>
+            
           </Typography>
         
           
