@@ -124,7 +124,7 @@ render() {
                 <div class="row">
                   <div class="col-md-12">
                     <label>User Name: </label>
-                    <input name="username" type="email" placeholder="email" required value={this.state.username}  onChange={this.handleChange}></input><br/>
+                    <input name="username" type="text" placeholder="user name" required value={this.state.username}  onChange={this.handleChange}></input><br/>
                     <label>Password: </label>
                     <input type="password" name="password" placeholder="password" required value={this.state.password} onChange={this.handleChange}></input><br />
                     <button type="button" class="btn btn-success" onClick={this.register}>Register</button><br />
@@ -138,7 +138,7 @@ render() {
                 <div class="row">
                   <div class="col-md-12">
                     <label>User Name: </label>
-                    <input name="username" type="email" placeholder="email" required value={this.state.username}  onChange={this.handleChange}></input><br/>
+                    <input name="username" type="text" placeholder="user name" required value={this.state.username}  onChange={this.handleChange}></input><br/>
                     <label>Password: </label>
                     <input type="password" name="password" placeholder="password" required value={this.state.password} onChange={this.handleChange}></input><br />
                     <button type="button" class="btn btn-success" onClick={this.login}>Log In</button><br />
