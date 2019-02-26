@@ -10,6 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
 import NavBarLanding from "../components/NavBarLanding";
 import axios from "axios";
+import "./Landing.css";
 
 
 const styles = theme => ({
@@ -118,23 +119,33 @@ render() {
                 </Button>
               </div> : 
               this.state.register ?
-              <form>
+              <form class="loginForm">
                 <h3>Register</h3>
-                <label>User Name</label>
-                <input name="username" value={this.state.username}  onChange={this.handleChange}></input><br/>
-                <label>Password</label>
-                <input type="password" name="password"  value={this.state.password} onChange={this.handleChange}></input><br />
-                <button onClick={this.register}>Register</button><br />
-                <button onClick={this.toggleRegister}>Login</button>
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>User Name: </label>
+                    <input name="username" type="email" placeholder="email" required value={this.state.username}  onChange={this.handleChange}></input><br/>
+                    <label>Password: </label>
+                    <input type="password" name="password" placeholder="password" required value={this.state.password} onChange={this.handleChange}></input><br />
+                    <button type="button" class="btn btn-success" onClick={this.register}>Register</button><br />
+                    <button type="button" class="btn btn-light" onClick={this.toggleRegister}>Login</button>
+                  </div>  
+                </div>
+                
               </form> :
-              <form>
+              <form class="loginForm">
                 <h3>Login</h3>
-              <label>User Name</label>
-              <input name="username" value={this.state.username}  onChange={this.handleChange}></input><br/>
-              <label>Password</label>
-              <input type="password" name="password" value={this.state.password} onChange={this.handleChange}></input><br />
-              <button onClick={this.login}>Log In</button><br />
-              <button onClick={this.toggleRegister}>Register</button>
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>User Name: </label>
+                    <input name="username" type="email" placeholder="email" required value={this.state.username}  onChange={this.handleChange}></input><br/>
+                    <label>Password: </label>
+                    <input type="password" name="password" placeholder="password" required value={this.state.password} onChange={this.handleChange}></input><br />
+                    <button type="button" class="btn btn-success" onClick={this.login}>Log In</button><br />
+                    <button type="button" class="btn btn-light" onClick={this.toggleRegister}>Register</button>
+                  </div>
+                </div>
+              
             </form>
             }
             </div>

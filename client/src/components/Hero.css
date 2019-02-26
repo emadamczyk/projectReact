@@ -1,7 +1,7 @@
 .backgroundImg {
     overflow: hidden;
     
-    height: 700px;
+    height: 100vh;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("/img/background.jpg");
@@ -12,7 +12,7 @@
 }
 
 #motto {
-    font-size: 100px; 
+    font-size: calc(30px + 3.5vw); 
     color: white; 
     font-weight: bold; 
     -webkit-text-stroke: black;
