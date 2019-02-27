@@ -13,6 +13,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import HomeIcon from '@material-ui/icons/Home';
+import FaceIcon from '@material-ui/icons/Face';
 import { Link } from 'react-router-dom';
 
 const styles = {
@@ -28,10 +29,11 @@ const styles = {
   },
 };
 
-class MenuAppBar extends React.Component {
+class StaticNavBar extends React.Component {
   state = {
     auth: true,
     anchorEl: null,
+    loggedIn: false
   };
 
   handleChange = event => {
@@ -46,13 +48,27 @@ class MenuAppBar extends React.Component {
     this.setState({ anchorEl: null });
   };
 
+  componentDidMount() {
+    let userId = sessionStorage.getItem("userId");
+    if (userId) {
+      this.setState({loggedIn: true});
+    }
+    
+  }
+
   render() {
     const { classes } = this.props;
     const { auth, anchorEl } = this.state;
     const open = Boolean(anchorEl);
 
+
+
     return (
       <div className={classes.root}>
+
+
+      {console.log("this is the loggedin property on statnavbar", this.state.loggedIn)}
+
         {/* <FormGroup>
           <FormControlLabel
             control={
@@ -79,6 +95,7 @@ class MenuAppBar extends React.Component {
                   component={Link} to="/home"
                 >
                 <HomeIcon />
+                {this.state.loggedIn ? <FaceIcon/> : null}
                 </IconButton>
                 <Menu
                   id="menu-appbar"
@@ -106,8 +123,8 @@ class MenuAppBar extends React.Component {
   }
 }
 
-MenuAppBar.propTypes = {
+StaticNavBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(MenuAppBar);
+export default withStyles(styles)(StaticNavBar);

@@ -1,6 +1,5 @@
 import React, {Component} from "react";
-import Hero from "../components/Hero";
-
+import Hero from "../components/Hero"
 import Center from 'react-center';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
@@ -9,8 +8,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
 import NavBarLanding from "../components/NavBarLanding";
+import StaticNavBar from "../components/StaticNavBar";
 import axios from "axios";
-
+import FaceIcon from '@material-ui/icons/Face';
 
 const styles = theme => ({
   root: {
@@ -91,6 +91,7 @@ class Landing extends Component {
     if (userId) {
       this.setState({loggedIn: true});
     }
+    
   }
 
 render() {
@@ -99,7 +100,10 @@ render() {
   return (
     <div>
       
-    <NavBarLanding />
+      {console.log("loggedin property from landing", this.state.loggedIn)}
+
+    <NavBarLanding isLoggedIn = {this.state.loggedIn} />
+
 <div className={classes.root}>
       <Grid container >
         <Grid item xs={12}>
@@ -113,10 +117,13 @@ render() {
               </div>
               {this.state.loggedIn ? 
               <div id="chainButton">
-                <Button component={Link} to="/home" className="btn-circle btn-xl">
+                <Button component={Link} to="/create" className="btn-circle btn-xl">
                         POST AN INCIDENT!
+                        {console.log("logged on property", this.state.loggedIn)}
                 </Button>
-              </div> : 
+              </div> 
+              
+              : 
               this.state.register ?
               <form>
                 <h3>Register</h3>

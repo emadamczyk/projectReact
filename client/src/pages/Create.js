@@ -13,11 +13,11 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import MenuAppBar from "../components/StaticNavBar";
+import StaticNavBar from "../components/StaticNavBar";
 import geoCodingAPI from "../utils/geoCodingAPI";
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import WorkingMap from "../components/WorkingMap";
-
+import FaceIcon from '@material-ui/icons/Face';
 
 const mapStyle = {
   width: '100%',
@@ -71,20 +71,6 @@ class Create extends Component {
     this.loadIncidents();
   }
 
-  // searchBikeIncidents = query => {
-  //   console.log("searching...")
-  //   ExternalAPI.search(query)
-  //     .then(res => this.setState({ results: res.data.incidents }))
-  //     .catch(err => console.log(err));
-  // };
-
-  // handleSearchSubmit  = event => {
-  //   if(event.key === 'Enter') {
-  //     console.log("submittng...", event)
-  //     // event.preventDefault();
-  //     this.searchBikeIncidents(this.state.searchTerm);
-  //   }
-  // };
 
   loadIncidents = () => {
     API.getIncidents()
@@ -156,9 +142,11 @@ class Create extends Component {
   render() {
     const { classes } = this.props;
     return (
-      
+    
+    
       <Container fluid>
-      <MenuAppBar/>
+      
+      <StaticNavBar/>
       <div style={{margin: "40px"}} className={classes.root}>
       <Grid container spacing={24}>
         <Grid style={gridTileStyle} item lg={6} md={12} xs={12}>
