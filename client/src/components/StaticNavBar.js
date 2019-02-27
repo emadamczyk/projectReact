@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../img/BYA-logo-horiz.PNG';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -61,13 +62,14 @@ class MenuAppBar extends React.Component {
             label={auth ? 'Logout' : 'Login'}
           />
         </FormGroup> */}
-        <AppBar position="static">
+        <AppBar position="static" style={{background:"#0E35B5"}}>
           <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+            {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
               <MenuIcon />
-            </IconButton>
+            </IconButton> */}
+            <img id="logo" style={{height: "12vh", marginRight: "10px"}} src={logo} />
             <Typography variant="h6" color="inherit" className={classes.grow}>
-            Bike Your AREA
+            
             </Typography>
             {auth && (
               <div>

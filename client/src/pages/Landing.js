@@ -111,10 +111,11 @@ render() {
             className="backgroundImg">
               <div>
                   <p id="motto" >WE LOVE SAFE BIKING</p>
+                  
               </div>
               {this.state.loggedIn ? 
               <div id="chainButton">
-                <Button component={Link} to="/home" className="btn-circle btn-xl">
+                <Button component={Link} to="/create" className="btn-circle btn-xl post">
                         POST AN INCIDENT!
                 </Button>
               </div> : 

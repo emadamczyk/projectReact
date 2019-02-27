@@ -24,12 +24,10 @@ const Hero = () => {
           
        
         </div>   
-   
+   <h1>hello</h1>
     <div id="chainButton">
 
-<Button component={Link} to="/home" className="btn-circle btn-xl">
-        POST AN INCIDENT!
-    </Button>
+
     </div>
     </div>
 

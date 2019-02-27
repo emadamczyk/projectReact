@@ -12,6 +12,10 @@
     border-radius: 15px;
     border-style: dotted;
 }
+.post {
+    font-size: calc(14px + 3.5vw);
+    width: 5%;
+}
 
 .btn-success {
     background: #0e35b5;
