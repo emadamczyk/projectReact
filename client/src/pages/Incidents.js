@@ -106,7 +106,7 @@ class Incidents extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Container fluid>  
+    <div>  
     <NavBar value={this.state.searchTerm} handleInputChange={this.handleInputChange} onKeyPress={this.handleSearchSubmit} />
     <br></br>
 
@@ -114,7 +114,7 @@ class Incidents extends Component {
 
     <ResultList results={this.state.results}/>
     
-      </Container>
+    </div>
       
     );
   }

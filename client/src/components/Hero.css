@@ -1,7 +1,7 @@
 .backgroundImg {
     overflow: hidden;
     
-    height: 700px;
+    height: 88vh;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("/img/background.jpg");
@@ -12,19 +12,24 @@
 }
 
 #motto {
-    font-size: 100px; 
+    font-size: calc(30px + 3.5vw); 
     color: white; 
     font-weight: bold; 
     -webkit-text-stroke: black;
     -webkit-text-stroke-width: .25px;
     opacity: 1;
 }
-
+.post {
+    width: 50%;
+}
 #chainButton {
-    height: 200px;
+    height: 150px;
     background-image: url('https://www.pngkey.com/png/full/80-805911_clip-art-free-library-bicycle-png-for-motorcycle.png');
-    background-size: 100px 100px;
+    background-size: 150px 150px;
     background-repeat: no-repeat;
     background-position: center;
     vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

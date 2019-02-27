@@ -11,6 +11,8 @@ import NavBarLanding from "../components/NavBarLanding";
 import StaticNavBar from "../components/StaticNavBar";
 import axios from "axios";
 import FaceIcon from '@material-ui/icons/Face';
+import "./Landing.css";
+
 
 const styles = theme => ({
   root: {
@@ -114,10 +116,11 @@ render() {
             className="backgroundImg">
               <div>
                   <p id="motto" >WE LOVE SAFE BIKING</p>
+                  
               </div>
               {this.state.loggedIn ? 
               <div id="chainButton">
-                <Button component={Link} to="/create" className="btn-circle btn-xl">
+                <Button component={Link} to="/create" className="btn-circle btn-xl post">
                         POST AN INCIDENT!
                         {console.log("logged on property", this.state.loggedIn)}
                 </Button>
@@ -125,23 +128,33 @@ render() {
               
               : 
               this.state.register ?
-              <form>
+              <form class="loginForm">
                 <h3>Register</h3>
-                <label>User Name</label>
-                <input name="username" value={this.state.username}  onChange={this.handleChange}></input><br/>
-                <label>Password</label>
-                <input type="password" name="password"  value={this.state.password} onChange={this.handleChange}></input><br />
-                <button onClick={this.register}>Register</button><br />
-                <button onClick={this.toggleRegister}>Login</button>
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>User Name: </label>
+                    <input name="username" type="text" placeholder="user name" required value={this.state.username}  onChange={this.handleChange}></input><br/>
+                    <label>Password: </label>
+                    <input type="password" name="password" placeholder="password" required value={this.state.password} onChange={this.handleChange}></input><br />
+                    <button type="button" class="btn btn-success" onClick={this.register}>Register</button><br />
+                    <button type="button" class="btn btn-light" onClick={this.toggleRegister}>Login</button>
+                  </div>  
+                </div>
+                
               </form> :
-              <form>
+              <form class="loginForm">
                 <h3>Login</h3>
-              <label>User Name</label>
-              <input name="username" value={this.state.username}  onChange={this.handleChange}></input><br/>
-              <label>Password</label>
-              <input type="password" name="password" value={this.state.password} onChange={this.handleChange}></input><br />
-              <button onClick={this.login}>Log In</button><br />
-              <button onClick={this.toggleRegister}>Register</button>
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>User Name: </label>
+                    <input name="username" type="text" placeholder="user name" required value={this.state.username}  onChange={this.handleChange}></input><br/>
+                    <label>Password: </label>
+                    <input type="password" name="password" placeholder="password" required value={this.state.password} onChange={this.handleChange}></input><br />
+                    <button type="button" class="btn btn-success" onClick={this.login}>Log In</button><br />
+                    <button type="button" class="btn btn-light" onClick={this.toggleRegister}>Register</button>
+                  </div>
+                </div>
+              
             </form>
             }
             </div>

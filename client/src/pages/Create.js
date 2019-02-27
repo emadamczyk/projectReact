@@ -18,6 +18,8 @@ import geoCodingAPI from "../utils/geoCodingAPI";
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import WorkingMap from "../components/WorkingMap";
 import FaceIcon from '@material-ui/icons/Face';
+import "./Create.css";
+
 
 const mapStyle = {
   width: '100%',
@@ -157,8 +159,9 @@ class Create extends Component {
         {/* xs=6 sm=3 */}
         <Grid item lg={3} md={6} xs={12}>
           <Paper className={classes.paper}>
-          <div>
+          <div class="incidentForms">
           <h1>Submit an Incident</h1>
+          
           <form>
               <Input  
               value={this.state.title}
@@ -202,7 +205,7 @@ class Create extends Component {
         <Grid item lg={3} md={6} xs={12}>
         {/* <Grid item xs={12} sm={3}> */}
           <Paper className={classes.paper}>
-          <div>
+          <div class="incidentForms">
             <h1>My Incidents</h1>
                         {this.state.incidents.length ? (
               <List>
@@ -226,7 +229,7 @@ class Create extends Component {
           </Grid>
       </Grid>
     </div>
-      </Container>
+     </Container>
       
     );
   }
