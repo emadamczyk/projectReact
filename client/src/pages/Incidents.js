@@ -6,6 +6,7 @@ import ResultList from "../components/ResultList";
 import ExternalAPI from "../utils/ExternalAPI";
 import geoCodingAPI from "../utils/geoCodingAPI";
 import { withStyles } from '@material-ui/core/styles';
+import "./Incidents.css";
 
 
 
@@ -31,7 +32,7 @@ class Incidents extends Component {
     description: "",
     searchTerm: "",
     results:[],
-    blah: "There are no results to display, yet...",
+    blah: "Search Bike Index for Reported Incidents by City or Zip Code",
     userId: null
   };
   

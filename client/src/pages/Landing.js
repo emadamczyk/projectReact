@@ -132,10 +132,10 @@ render() {
                 <h3>Register</h3>
                 <div class="row">
                   <div class="col-md-12">
-                    <label>User Name: </label>
-                    <input name="username" type="text" placeholder="user name" required value={this.state.username}  onChange={this.handleChange}></input><br/>
-                    <label>Password: </label>
-                    <input type="password" name="password" placeholder="password" required value={this.state.password} onChange={this.handleChange}></input><br />
+                    <label for="username">User Name: </label>
+                    <input class="username" name="username" type="text" placeholder="user name" required value={this.state.username}  onChange={this.handleChange}></input><br/>
+                    <label for="password">Password: </label>
+                    <input class="password" type="password" name="password" placeholder="password" required value={this.state.password} onChange={this.handleChange}></input><br />
                     <button type="button" class="btn btn-success" onClick={this.register}>Register</button><br />
                     <button type="button" class="btn btn-light" onClick={this.toggleRegister}>Login</button>
                   </div>  
@@ -146,10 +146,10 @@ render() {
                 <h3>Login</h3>
                 <div class="row">
                   <div class="col-md-12">
-                    <label>User Name: </label>
-                    <input name="username" type="text" placeholder="user name" required value={this.state.username}  onChange={this.handleChange}></input><br/>
-                    <label>Password: </label>
-                    <input type="password" name="password" placeholder="password" required value={this.state.password} onChange={this.handleChange}></input><br />
+                    <label for="username">User Name: </label>
+                    <input class="username" name="username" type="text" placeholder="user name" required value={this.state.username}  onChange={this.handleChange}></input><br/>
+                    <label for="password">Password: </label>
+                    <input class="password" type="password" name="password" placeholder="password" required value={this.state.password} onChange={this.handleChange}></input><br />
                     <button type="button" class="btn btn-success" onClick={this.login}>Log In</button><br />
                     <button type="button" class="btn btn-light" onClick={this.toggleRegister}>Register</button>
                   </div>
