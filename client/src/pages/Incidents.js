@@ -31,7 +31,7 @@ class Incidents extends Component {
     description: "",
     searchTerm: "",
     results:[],
-    blah: "There are no results to display, yet...",
+    blah: "Search Bike Index for Reported Incidents by City or Zip Code",
     userId: null
   };
   

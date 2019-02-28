@@ -46,3 +46,11 @@
 input {
     margin: 2px;
 }
+
+label {
+    width: 100px;
+    clear: left;
+    text-align: right;
+    padding-right: 10px;
+}
+

@@ -146,7 +146,7 @@ class Create extends Component {
     return (
     
     
-      <Container fluid>
+      <div> 
       
       <StaticNavBar/>
       <div style={{margin: "40px"}} className={classes.root}>
@@ -222,14 +222,14 @@ class Create extends Component {
                 ))}
               </List>
             ) : (
-              <h3>You Have No Incidents Reported</h3>
+              <h3>No Incidents Yet Reported</h3>
             )}
           </div>
           </Paper>
           </Grid>
       </Grid>
     </div>
-     </Container>
+     </div>
       
     );
   }
