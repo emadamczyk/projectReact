@@ -67,6 +67,7 @@ class Create extends Component {
   };
 
 
+
   componentDidMount() {
     let userId = sessionStorage.getItem("userId");
     this.setState({userId});
@@ -97,18 +98,13 @@ class Create extends Component {
   };
 
   handleFormSubmit = event => {
-    console.log("hit submit");
     event.preventDefault();
-  console.log('locationnnnnn', this.state.location)
-  var self = this
+
+    var self = this
     geoCodingAPI.search(this.state.location).then(function(data) {
 
-      // console.log("this is the location object", data.data.results[0].geometry.location);
       self.setState({incidents: [...self.state.incidents, data.data.results[0].geometry.location]})
-      // console.log("this is coordarray", self.state.coordArray);
-      // console.log("this is the location array", self.state.coordArray);
 
-      // console.log('WE GOT THIS BACK!!! FROM GEO!!', data.data.results[0].geometry.location.lat)
       API.saveIncident({
         title: self.state.title,
         author: self.state.author,
@@ -119,26 +115,19 @@ class Create extends Component {
         description: self.state.description
       })
         .then(res => 
-          // console.log("this is the location object", res.data),
-          self.loadIncidents()
+      
+          self.loadIncidents(),
+          // console.log("this is the title state", this.state.title),
+          self.setState({title: "", author: "", type: "", location: "", description: ""})
+          // document.getElementById("incidentForm").reset()
         )
-        // .then(res => self.setState({coordArray: res.data.data.results[0].geometry.location}))
+       
         .catch(err => console.log(err));
     }).catch(function(err) {
       console.log('THIS IS OUR ERR!!', err);
     })
-    //if (this.state.title && this.state.author) {
-      // API.saveIncident({
-      //   title: this.state.title,
-      //   author: this.state.author,
-      //   type: this.state.type,
-      //   location: this.state.location,
-      //   latLng: '',
-      //   description: this.state.description
-      // })
-      //   .then(res => this.loadIncidents())
-      //   .catch(err => console.log(err));
-    //}
+    // console.log("this is the title state", this.state.title);
+    // this.setState({title: ""})
   };
 
   render() {
@@ -162,7 +151,7 @@ class Create extends Component {
           <div class="incidentForms">
           <h1>Submit an Incident</h1>
           
-          <form>
+          <form id="incidentForm">
               <Input  
               value={this.state.title}
               onChange={this.handleInputChange}

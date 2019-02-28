@@ -96,7 +96,7 @@ class StaticNavBar extends React.Component {
                   color="inherit"
                   component={Link} to="/home"
                 >
-                <HomeIcon />
+                <HomeIcon style={{margin: "10px"}} />
                 {this.state.loggedIn ? <FaceIcon/> : null}
                 </IconButton>
                 <Menu

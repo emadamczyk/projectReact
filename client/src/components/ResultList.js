@@ -36,9 +36,9 @@ function ResultList(props) {
       imgUrl = bikes[random]
     }
     var html = (
-        <div className="card" style={{width: '18rem', display: 'inline-block', margin: '10px',color: '#ffff'}}>
+        <div className="card" class="rounded "style={{width: '18rem', display: 'inline-block', margin: '10px',color: '#ffff'}}>
           <img className="card-img-top" width="200px" height="150px" src={imgUrl}></img>
-          <div className="card-body" style={{maxHeight: '40rem',backgroundColor: '#3f51b5'}} >
+          <div className="card-body"  style={{maxHeight: '40rem',backgroundColor: '#3f51b5'}} >
             <h5 className="card-title"style={{ maxHeight: '50px', minHeight: '50px'}}>{result.title}</h5>
             <p id="testpadding">{result.type}</p>
             
