@@ -196,7 +196,7 @@ class Create extends Component {
         {/* <Grid item xs={12} sm={3}> */}
           <Paper className={classes.paper}>
           <div class="incidentForms">
-            <h1>My Incidents</h1>
+            <h1>Reported Incidents</h1>
                         {this.state.incidents.length ? (
               <List>
                 
