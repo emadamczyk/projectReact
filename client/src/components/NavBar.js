@@ -124,7 +124,7 @@ function SearchAppBar(props) {
               onChange={props.handleInputChange}
               value={props.value}
               name='searchTerm'
-              placeholder="Search"
+              placeholder="City / Zip"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,

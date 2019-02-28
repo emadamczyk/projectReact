@@ -27,7 +27,7 @@ function ResultList(props) {
   props.results.map((result) => {
     var imgUrl = ''
 
-    var bikes = ['https://imageos.giant-bicycles.com/b_white,c_pad,h_400,q_80/Defy-Advanced-2-Color-A-Neon-Green/Defy-Advanced-2-Color-A-Neon-Green.jpg','https://www.danflahertylaw.com/images/plainfield-bicycle-accident-attorney.jpg','https://wrongfuldeathsite.files.wordpress.com/2017/06/bicycle-collision.jpg','https://starecat.com/content/wp-content/uploads/trump-riding-on-a-lion-with-putin-riding-on-a-bear.jpg;' ,'http://farm1.staticflickr.com/189/486212501_4eb23facdb.jpg','https://cdn.shopify.com/s/files/1/0116/6732/products/chief_moss_grn_1024x1024.png?v=1479315448', 'https://cdn.gearpatrol.com/wp-content/uploads/2018/02/Priority-Revamped-Cruiser-gear-patrol-full-lead.jpg']
+    var bikes = ['https://media1.tenor.com/images/4276421f5850fb884b9f2fe3e5e0652e/tenor.gif?itemid=8151223','http://assets.sbnation.com/assets/1237323/wreck2.gif','http://gif-finder.com/wp-content/uploads/2014/08/Dumb-and-Dumber-To-Bike-Partners.gif','https://media.tenor.com/images/c304005bebf94487e9a0c5b50539b1e4/tenor.gif','https://www.danflahertylaw.com/images/plainfield-bicycle-accident-attorney.jpg','https://wrongfuldeathsite.files.wordpress.com/2017/06/bicycle-collision.jpg','https://starecat.com/content/wp-content/uploads/trump-riding-on-a-lion-with-putin-riding-on-a-bear.jpg;' ,'http://farm1.staticflickr.com/189/486212501_4eb23facdb.jpg','https://cdn.shopify.com/s/files/1/0116/6732/products/chief_moss_grn_1024x1024.png?v=1479315448', 'https://cdn.gearpatrol.com/wp-content/uploads/2018/02/Priority-Revamped-Cruiser-gear-patrol-full-lead.jpg']
 
     if(result.media.image_url) {
       imgUrl = result.media.image_url
@@ -42,7 +42,7 @@ function ResultList(props) {
             <h5 className="card-title"style={{ maxHeight: '50px', minHeight: '50px'}}>{result.title}</h5>
             <p>{result.type}</p>
             
-            <p className="card-text" style={{ maxWidth: '250px', overflow: 'scroll', maxHeight: '100px', minHeight: '100px'}}> {result.description}</p>
+            <p className="card-text" style={{ maxWidth: '250px', overflowY: 'scroll', maxHeight: '100px', minHeight: '100px'}}> {result.description}</p>
             {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
           </div>
         </div>
@@ -50,7 +50,7 @@ function ResultList(props) {
     results.push(html) 
   }) 
   return (
-    <div style={{ width: '80%' }}>
+    <div style={{ width: '75%',marginLeft:'75px' }}>
       {results}
     </div>
   );
