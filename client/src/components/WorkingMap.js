@@ -74,10 +74,10 @@ export class MapContainer extends Component {
         onClick={this.onMarkerClick}
         name={
           <div>
-            <p id="1">{this.props.incidentsArray[i].title}</p>
-            <p id="2">{this.props.incidentsArray[i].author}</p>
-            <p id="3">{this.props.incidentsArray[i].type}</p>
-            <p id="4">{this.props.incidentsArray[i].description}</p>
+            <p style={{margin: "5px", textAlign: "center", fontSize: "25px"}}>{this.props.incidentsArray[i].title}</p>
+            <p style={{margin: "5px", textAlign: "center", fontSize: "15px", fontStyle: "italic"}}>{this.props.incidentsArray[i].author}</p>
+            <p style={{margin: "5px", textAlign: "center", fontSize: "18px"}}>{this.props.incidentsArray[i].type}</p>
+            <p style={{margin: "5px", textAlign: "center", fontSize: "18px"}}>{this.props.incidentsArray[i].description}</p>
           </div>
         } 
             // name={'dolorrrrrres park'} 
