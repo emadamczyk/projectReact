@@ -104,6 +104,7 @@ class Create extends Component {
     geoCodingAPI.search(this.state.location).then(function(data) {
 
       self.setState({incidents: [...self.state.incidents, data.data.results[0].geometry.location]})
+      console.log("this is the incidents array", self.state.incidents);
 
       API.saveIncident({
         title: self.state.title,
