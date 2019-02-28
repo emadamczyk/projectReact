@@ -42,7 +42,7 @@ function ResultList(props) {
             <h5 className="card-title"style={{ maxHeight: '50px', minHeight: '50px'}}>{result.title}</h5>
             <p>{result.type}</p>
             
-            <p className="card-text" style={{ maxWidth: '250px', overflow: 'scroll', maxHeight: '100px', minHeight: '100px'}}> {result.description}</p>
+            <p className="card-text" style={{ maxWidth: '250px', overflowY: 'scroll', maxHeight: '100px', minHeight: '100px'}}> {result.description}</p>
             {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
           </div>
         </div>
@@ -50,7 +50,7 @@ function ResultList(props) {
     results.push(html) 
   }) 
   return (
-    <div style={{ width: '80%' }}>
+    <div style={{ width: '75%',marginLeft:'75px' }}>
       {results}
     </div>
   );
