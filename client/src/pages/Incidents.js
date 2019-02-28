@@ -6,6 +6,7 @@ import ResultList from "../components/ResultList";
 import ExternalAPI from "../utils/ExternalAPI";
 import geoCodingAPI from "../utils/geoCodingAPI";
 import { withStyles } from '@material-ui/core/styles';
+import "./Incidents.css";
 
 
 

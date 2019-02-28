@@ -40,7 +40,7 @@ function ResultList(props) {
           <img className="card-img-top" width="200px" height="150px" src={imgUrl}></img>
           <div className="card-body" style={{maxHeight: '40rem',backgroundColor: '#3f51b5'}} >
             <h5 className="card-title"style={{ maxHeight: '50px', minHeight: '50px'}}>{result.title}</h5>
-            <p>{result.type}</p>
+            <p id="testpadding">{result.type}</p>
             
             <p className="card-text" style={{ maxWidth: '250px', overflowY: 'scroll', maxHeight: '100px', minHeight: '100px'}}> {result.description}</p>
             {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
@@ -50,7 +50,7 @@ function ResultList(props) {
     results.push(html) 
   }) 
   return (
-    <div style={{ width: '75%',marginLeft:'75px' }}>
+    <div style={{ width: '75%',marginLeft:'auto',marginRight:'auto' }}>
       {results}
     </div>
   );

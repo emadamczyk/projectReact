@@ -1,0 +1,23 @@
+
+
+.card-text::-webkit-scrollbar {
+    color:  rgb(163, 16, 16);
+    background-color: rgb(63, 81, 181);
+    width: 8px
+}
+ 
+.card-text::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid rgb(244, 248, 245);
+  }
+.card-text{
+    border-top-width: 2px;
+    border-top-color: rgb(248, 242, 242);
+    border-top-style: solid;
+    font-size: 12px;
+    padding-top: 2px;
+}
+
+.testpadding{
+    margin-bottom: 5px
+}
