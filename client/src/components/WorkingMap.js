@@ -53,7 +53,7 @@ export class MapContainer extends Component {
     return (
     <div>
 
-        {console.log("this is the coordinate array", this.props.incidentsArray)}
+        {/* {console.log("this is the coordinate array", this.props.incidentsArray)} */}
       
         <Map
         google={this.props.google}
@@ -66,8 +66,7 @@ export class MapContainer extends Component {
         onClick={this.onMapClicked}
         
       >
-      {console.log("this is the props.incidentsArray.location", this.props.incidentsArray)}
-        {console.log("this is the props.incidentsArray.location", this.props.incidentsArray[0].location)}
+   
       {this.props.incidentsArray.map((x, i) => {
 
         return <Marker 
@@ -83,6 +82,7 @@ export class MapContainer extends Component {
         } 
             // name={'dolorrrrrres park'} 
             title={this.props.incidentsArray[i].location}
+            // title={this.props.incidentsArray[i].location}
             // position={{lat: 37.759703, lng: -122.428093}}
             // position={{lat: this.state.locations[i].lat , lng: this.state.locations[i].lng}}
             position={{lat: this.props.incidentsArray[i].lat , lng: this.props.incidentsArray[i].lng}}
