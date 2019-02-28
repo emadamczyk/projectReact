@@ -15,6 +15,7 @@
 .post {
     font-size: calc(14px + 3.5vw);
     width: 5%;
+    padding: 50px;
 }
 
 .btn-success {
