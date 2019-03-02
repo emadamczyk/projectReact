@@ -14,6 +14,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import HomeIcon from '@material-ui/icons/Home';
+import SearchIcon from '@material-ui/icons/Search';
 import FaceIcon from '@material-ui/icons/Face';
 import { Link } from 'react-router-dom';
 
@@ -96,7 +97,7 @@ class StaticNavBar extends React.Component {
                   color="inherit"
                   component={Link} to="/home"
                 >
-                <HomeIcon style={{margin: "10px"}} />
+                <SearchIcon style={{margin: "10px"}} />
                 {this.state.loggedIn ? <FaceIcon/> : null}
                 </IconButton>
                 <Menu

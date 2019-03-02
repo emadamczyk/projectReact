@@ -12,6 +12,11 @@
     border-radius: 15px;
     border-style: dotted;
 }
+
+.loginForm h3 {
+    color: #0e35b5;
+}
+
 .post {
     font-size: calc(14px + 3.5vw);
     width: 5%;
@@ -27,7 +32,7 @@
 
 .btn-success:hover {
     background: #092687;
-    border-color: #b3ddf2;
+    border-color: #ff0000 !important;
     font-style: bolder;
 }
 
