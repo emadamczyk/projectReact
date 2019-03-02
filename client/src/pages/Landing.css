@@ -1,0 +1,62 @@
+.loginForm {
+    background: white;
+    opacity: .7;
+    width: 20rem;
+    position: center;
+    margin: auto;
+    padding-top: .5rem;
+    opacity: 100%;
+    padding-bottom: 1rem;
+    border-color: #B3DDF2;
+    border-width: 3px;
+    border-radius: 15px;
+    border-style: dotted;
+}
+
+.loginForm h3 {
+    color: #0e35b5;
+}
+
+.post {
+    font-size: calc(14px + 3.5vw);
+    width: 5%;
+    padding: 50px;
+}
+
+.btn-success {
+    background: #0e35b5;
+    border-color: #0e35b5;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.btn-success:hover {
+    background: #092687;
+    border-color: #ff0000 !important;
+    font-style: bolder;
+}
+
+.btn-light {
+    background: #b3ddf2;
+    border-color: #0e35b5;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.btn-light:hover {
+    background: #d0e6f2;
+    border-color: #0e35b5;
+    font-style: bolder;
+}
+
+input {
+    margin: 2px;
+}
+
+label {
+    width: 100px;
+    clear: left;
+    text-align: right;
+    padding-right: 10px;
+}
+

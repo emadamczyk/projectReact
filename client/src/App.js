@@ -1,45 +1,30 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import axios from "axios";
+import React from "react";
+import Incidents from "./pages/Incidents";
+import Landing from "./pages/Landing";
+import Create from "./pages/Create";
 
-class App extends Component {
-
-  state = {
-    "testValue": "getting..."
-  }
-
-
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import 'typeface-roboto';
+import './index';
+//import 'typeface-montserrat';
+import UserForm from "./components/UserForm";
 
 
-  componentDidMount() {
-    // console.log("mouting app");
-    // axios.get("/api/test", (result) => {
-    //   console.log(result);
-    // })
 
-    axios.get("/api/test")
-  .then(result => {
-    console.log(result.data.test)
-    this.setState({"testValue": result.data.test})
-  })
-  }
+function App() {
 
-
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to Final! React! Project!</h2>
-        </div>
-        <p className="App-intro">
-          {/* To get started, edit <code>src/App.js</code> and save to reload. */}
-          the test value is: {this.state.testValue}
-        </p>
+  return (
+    <Router>
+      <div>
+        <Route exact path="/landing" component={Landing} />
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/home" component={Incidents} />
+        <Route exact path="/create" component={Create} />
+        <Route exact path="/login" component={UserForm} />
       </div>
-    );
-  }
+    </Router>
+    
+  );
 }
 
 export default App;
