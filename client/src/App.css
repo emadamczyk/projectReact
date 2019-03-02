@@ -1,0 +1,20 @@
+div.image {
+font-size: 50px;
+margin: 50px;
+border: 2px black solid;
+height: 100px;
+width: 100px;
+text-align: center;
+background-color: aquamarine;
+
+}
+
+#board {
+  display: flex
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2em
+}
