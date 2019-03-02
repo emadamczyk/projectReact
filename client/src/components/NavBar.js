@@ -97,7 +97,7 @@ function SearchAppBar(props) {
   const { classes} = props;
   return (
     <div className={classes.root}>
-      <Grid item lg={1} xs={12}>
+      <Grid item xs={12}>
       <AppBar position="static" style={{background:"#0E35B5"}}>
         <Toolbar>
           {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
