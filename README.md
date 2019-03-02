@@ -6,7 +6,6 @@ This project was created by fellow bicycle enthusiasts tired of hazards and obst
 
 
 ## Live Links:
-*https://teamarea.herokuapp.com/*
 *https://project-area.herokuapp.com/*
 
 ## To Run on Local Host:
